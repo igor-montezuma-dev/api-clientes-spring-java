@@ -1,5 +1,6 @@
 package io.github.igormontezuma20.clientes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class Cliente {
     @Column(nullable =false, length = 11)
     private String cpf;
     @Column(name = "data_cadastro")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
     @PrePersist
