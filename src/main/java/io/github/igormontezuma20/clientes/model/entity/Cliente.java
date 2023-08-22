@@ -23,7 +23,7 @@ public class Cliente {
     String nome;
     @Column(nullable =false, length = 11)
     private String cpf;
-    @Column(name = "data_cadastro")
+    @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
