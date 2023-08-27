@@ -22,10 +22,10 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable =false, length = 150)
+    @Column(nullable =false, columnDefinition="TEXT", length = 150)
     @NotEmpty(message = "{campo.nome.obrigatorio}")
     String nome;
-    @Column(nullable =false, length = 11)
+    @Column(nullable =false, columnDefinition="TEXT", length = 11)
     @NotNull(message = "{campo.cpf.obrigatorio}")
     @CPF(message = "{campo.cpf.invalido}")
     private String cpf;
