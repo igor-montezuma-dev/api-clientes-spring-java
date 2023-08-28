@@ -14,6 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -45,5 +46,13 @@ public class ServicoPrestadoController {
         servicoPrestado.setCliente(cliente);
 
         return servicoPrestadoRepository.save(servicoPrestado);
+    }
+
+    @GetMapping
+    public List<ServicoPrestado> searchService(
+            @RequestParam(value = "nome", required = false, defaultValue = "") String nome,
+            @RequestParam(value = "mes", required = false ) Integer mes
+    ){
+        return servicoPrestadoRepository.findByClientNameAndMonth("%" + nome + "%", mes);
     }
 }
