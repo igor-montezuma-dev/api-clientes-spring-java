@@ -4,10 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Data
-public class Servico {
+public class ServicoPrestado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -17,6 +18,9 @@ public class Servico {
 
     @Column
     private BigDecimal valor;
+
+    @Column
+    private LocalDate data;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
