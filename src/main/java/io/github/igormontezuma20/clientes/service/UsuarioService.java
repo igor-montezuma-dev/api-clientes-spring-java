@@ -1,5 +1,6 @@
 package io.github.igormontezuma20.clientes.service;
 
+import io.github.igormontezuma20.clientes.exception.UsuarioCadastradoException;
 import io.github.igormontezuma20.clientes.model.entity.Usuario;
 import io.github.igormontezuma20.clientes.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,14 @@ public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private UsuarioRepository repository;
+
+    public Usuario saveUser(Usuario usuario) {
+        boolean exists = repository.existsByUsername(usuario.getUsername());
+        if (exists ) {
+            throw new UsuarioCadastradoException(usuario.getUsername());
+        }
+        return repository.save(usuario);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
