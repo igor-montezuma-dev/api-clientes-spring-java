@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping(value = "/api/usuarios",  method=RequestMethod.POST)
 @RequiredArgsConstructor
 public class UsuarioController {
 
