@@ -7,7 +7,6 @@ import io.github.igormontezuma20.clientes.model.repository.ServicoPrestadoReposi
 import io.github.igormontezuma20.clientes.rest.dto.ServicoPrestadoDTO;
 import io.github.igormontezuma20.clientes.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -16,7 +15,6 @@ import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/servicos-prestados")
