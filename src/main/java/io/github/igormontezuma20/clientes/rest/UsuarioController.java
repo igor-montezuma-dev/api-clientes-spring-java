@@ -18,7 +18,7 @@ public class UsuarioController {
 
     private final UsuarioService service;
 
-    @PostMapping
+    @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createUser(@RequestBody @Valid Usuario user){
         try {
