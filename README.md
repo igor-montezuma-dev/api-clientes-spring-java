@@ -33,6 +33,7 @@ Este projeto é um sistema de vendas desenvolvido utilizando Spring Boot, Postgr
 spring.datasource.url=jdbc:postgresql://localhost:5432/sistema_vendas
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
+````
 
 ## Contribuição
 
