@@ -1,38 +1,40 @@
-# Sistema de Vendas com Spring Boot
+# Sistema Help Desk com Spring Boot
 
-Este projeto é um sistema de vendas desenvolvido utilizando Spring Boot, PostgreSQL, Jasper Reports e inclui uma dashboard para visualização de dados em tempo real.
+Este é um projeto de API RESTful desenvolvido com Spring Boot para um sistema de vendas, que inclui funcionalidades de cadastro de clientes e realização de serviços.
 
-## Funcionalidades
+## Funcionalidades Principais
 
-- Cadastro de clientes
-- Cadastro de produtos
-- Realização de vendas
-- Dashboard com gráficos de vendas mensais
-- Geração de relatórios utilizando Jasper Reports
+- Cadastro de Clientes: Permite o cadastro, atualização, remoção e consulta de clientes.
+- Realização de Serviços: Funcionalidade para realizar serviços para os clientes cadastrados.
+- Segurança de Rotas: Utilização de autenticação JWT para proteger as rotas da API.
+- Restrição de Acesso: Controle de acesso baseado em papéis (roles) para diferentes tipos de usuário.
 
 ## Tecnologias Utilizadas
 
-- Java 11
-- Spring Boot 2.x
+- Java
+- Spring Boot
+- Spring Data JPA
 - PostgreSQL
-- Jasper Reports
-- HTML, CSS, JavaScript (para a dashboard)
+- Spring Security (JWT)
+- Maven
 
 ## Pré-requisitos
 
 - JDK 11 ou superior
-- PostgreSQL instalado e configurado
-- Maven ou Gradle para build do projeto
+- PostgreSQL (com banco de dados criado)
 
 ## Configuração do Banco de Dados
 
-1. Crie um banco de dados PostgreSQL chamado `sistema_vendas`.
-2. Confira e ajuste as configurações de acesso ao banco no arquivo `application.properties`.
+1. Crie um banco de dados PostgreSQL com o nome `sistema_vendas`.
+2. Configure as credenciais de acesso ao banco de dados no arquivo `application.properties`.
+
+Exemplo de `application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/sistema_vendas
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
+spring.jpa.hibernate.ddl-auto=update
 ````
 
 ## Contribuição
